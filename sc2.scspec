@@ -1,0 +1,57 @@
+7
+minerals 10
+scv_idle 6
+CC_idle 1
+barracs_idle 0
+supply 4
+minerals_fields 24
+marines 0
+
+5
+build-scv
+  starts-in CC_idle
+  parallelizm 0
+  time 7
+  spend 2 
+    supply 1
+    minerals 10
+  earn 1
+    scv_idle 1 
+
+mine
+  starts-in scv_idle
+  parallelizm 0
+  time 3
+  spend 1  
+    minerals_fields 1
+  earn 2
+    minerals_fields 1
+    minerals 1  
+
+build-supply-depot
+  starts-in scv_idle  
+  parallelizm 3
+  time 12
+  spend 1
+    minerals 20
+  earn 1
+    supply 8
+
+build-barracs
+  starts-in scv_idle
+  parallelizm 3
+  time 24
+  spend 1
+    minerals 30
+  earn 1
+    barracs_idle 1
+	
+train-marine
+  starts-in barracs_idle
+  parallelizm 0
+  time 10
+  spend 2
+    minerals 10
+	supply 1
+  earn 1
+    marines 1
